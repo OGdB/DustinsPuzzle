@@ -5,7 +5,7 @@ public class FirstPersonLook : MonoBehaviour
     public float minX = -60f;
     public float maxX = 60f;
 
-    public float sensitivity;
+    public float sensitivity = 2f;
     private Camera cam;
 
     private Vector3 thisRot;

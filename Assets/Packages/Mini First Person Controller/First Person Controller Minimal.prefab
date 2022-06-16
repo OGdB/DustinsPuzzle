@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f45facc01772ba47a9ae17bb7061b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 5269945355364510514}
+  character: {fileID: 6402203609115618604}
   groundCheck: {fileID: 5272657471857185710}
   stepAudio: {fileID: 7492485762413666113}
   runningAudio: {fileID: 0}
@@ -332,10 +332,10 @@ GameObject:
   - component: {fileID: 5238820401998598406}
   - component: {fileID: 5286307983767585980}
   - component: {fileID: 5222740939418225544}
-  - component: {fileID: 5269945355364510514}
-  - component: {fileID: 1606333916}
-  - component: {fileID: 1989300255}
-  - component: {fileID: 1989300256}
+  - component: {fileID: 6402203609115618603}
+  - component: {fileID: 6402203609115618604}
+  - component: {fileID: 6402203609115618605}
+  - component: {fileID: 6402203609115618609}
   m_Layer: 0
   m_Name: First Person Controller Minimal
   m_TagString: Untagged
@@ -392,7 +392,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!114 &5269945355364510514
+--- !u!114 &6402203609115618603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241267463746980526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8843aba0d613e5f4c9a8339da5671609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6402203609115618604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,25 +417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  canRun: 0
+  canRun: 1
   runSpeed: 9
   runningKey: 304
---- !u!114 &1606333916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5241267463746980526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf498a18ca0a5542a52b7e9cb3c448f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 5256384803381100468}
-  interactText: {fileID: 0}
-  interactionDistance: 1.25
---- !u!114 &1989300255
+--- !u!114 &6402203609115618605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,9 +434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -60
   maxX: 60
-  sensitivity: 2
-  cam: {fileID: 5256384803381100468}
---- !u!114 &1989300256
+  sensitivity: 0
+  inverted: 0
+--- !u!114 &6402203609115618609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -448,9 +445,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5241267463746980526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8843aba0d613e5f4c9a8339da5671609, type: 3}
+  m_Script: {fileID: 11500000, guid: faf498a18ca0a5542a52b7e9cb3c448f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactText: {fileID: 0}
+  interactionDistance: 1.25
 --- !u!1 &5241892580736583940
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,9 +545,9 @@ GameObject:
   - component: {fileID: 5256384803381100468}
   - component: {fileID: 5262169347900679442}
   - component: {fileID: 5304019296978978324}
-  - component: {fileID: 1606333919}
-  - component: {fileID: 1606333920}
-  - component: {fileID: 1606333924}
+  - component: {fileID: 1928783643}
+  - component: {fileID: 1928783642}
+  - component: {fileID: 1928783644}
   m_Layer: 3
   m_Name: First Person Camera
   m_TagString: MainCamera
@@ -564,7 +563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242010300582068122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.488, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -630,7 +629,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242010300582068122}
   m_Enabled: 1
---- !u!114 &1606333919
+--- !u!114 &1928783643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,7 +647,7 @@ MonoBehaviour:
     m_Bits: 8
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 1
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -657,7 +656,7 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 1
+    fastMode: 0
     keepAlpha: 0
   fog:
     enabled: 1
@@ -690,7 +689,7 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1606333920
+--- !u!114 &1928783642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,7 +706,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!108 &1606333924
+--- !u!108 &1928783644
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
