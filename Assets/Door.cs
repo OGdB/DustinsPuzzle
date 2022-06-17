@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Door : MonoBehaviour
 {
@@ -23,8 +25,22 @@ public class Door : MonoBehaviour
     {
         _ = StartCoroutine(LerpLocalPosition(openingSpeed, closedPosition));
     }
+    public void NextScene() 
+    { 
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
-    private IEnumerator LerpLocalPosition(float speed, Vector3 targetPosition)
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            NextScene();
+        }
+    }
+
+private IEnumerator LerpLocalPosition(float speed, Vector3 targetPosition)
     {
         float startTime = Time.time;
         Vector3 startPosition = transform.localPosition;

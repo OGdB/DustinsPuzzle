@@ -70,7 +70,7 @@ namespace Ring_Puzzle
             currentInteractable = null;
         }
 
-        private void OnValidate()
+        private void Awake()
         {
             cam = Camera.main;
         }
