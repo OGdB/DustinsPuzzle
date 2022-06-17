@@ -52,6 +52,14 @@ namespace Ring_Puzzle
             _ = StartCoroutine(Rotate());
         }
 
+        public void CheatToCorrectRotation()
+        {
+            Vector3 correctRot = transform.rotation.eulerAngles;
+            correctRot.y = correctYRotation;
+            transform.rotation = Quaternion.Euler(correctRot);
+            CorrectRotation = true;
+        }
+
         public void RotateToRandomRotation()
         {
             _ = StartCoroutine(RotateRandom());

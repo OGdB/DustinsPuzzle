@@ -7,30 +7,52 @@ namespace Ring_Puzzle
     {
         [Tooltip("Everything that happens when the puzzle is finished"), Space(5)]
         public UnityEvent onPuzzleFinishedEvents;
-
+        [Tooltip("Everything that happens when the level is finished")]
+        public UnityEvent onLevelFinished;
+        
         private int currentPosition = 0;
 
         private void Start()
         {
-            RandomMoveOrnaments();
-            RandomRotateRings();
+            /*RandomMoveOrnaments();
+            RandomRotateRings();*/
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Ring[] rings = FindObjectsOfType<Ring>();
+                foreach (var ring in rings)
+                {
+                    ring.CheatToCorrectRotation();
+                }
+            }
         }
 
         public void CorrectRotationCheck()
         {
-            bool puzzleFinished = true;
-            Ring[] rings = FindObjectsOfType<Ring>();
-            for (int i = 0; i < rings.Length; i++)
+            if (currentPosition < 5)
             {
-                Ring ring = rings[i];
-                if (!ring.CorrectRotation)
-                    puzzleFinished = false;
-            }
+                bool puzzleFinished = true;
+                Ring[] rings = FindObjectsOfType<Ring>();
+                for (int i = 0; i < rings.Length; i++)
+                {
+                    Ring ring = rings[i];
+                    if (!ring.CorrectRotation)
+                        puzzleFinished = false;
+                }
 
-            if (puzzleFinished)
-            {
-                //Debug.Log("All rings on correct rotation!");
-                onPuzzleFinishedEvents.Invoke();
+                if (puzzleFinished)
+                {
+                    //Debug.Log("All rings on correct rotation!");
+                    onPuzzleFinishedEvents.Invoke();
+                }
+
+                if (currentPosition == 5)
+                {
+                    onLevelFinished.Invoke();
+                }
             }
         }
 
@@ -44,10 +66,13 @@ namespace Ring_Puzzle
 
         private void RandomMoveOrnaments()
         {
-            ConstellationOrnament[] ornaments = FindObjectsOfType<ConstellationOrnament>();
-            foreach (var ornament in ornaments)
+            if (currentPosition < 5)
             {
-                ornament.MoveToConstellationOrder(currentPosition);
+                ConstellationOrnament[] ornaments = FindObjectsOfType<ConstellationOrnament>();
+                foreach (var ornament in ornaments)
+                {
+                    ornament.MoveToConstellationOrder(currentPosition);
+                }
             }
         }
         private void RandomRotateRings()
