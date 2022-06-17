@@ -34,12 +34,12 @@ namespace Ring_Puzzle
 
             if (puzzleFinished)
             {
-                Debug.Log("All rings on correct rotation!");
+                //Debug.Log("All rings on correct rotation!");
                 onPuzzleFinishedEvents.Invoke();
                 _ = StartCoroutine(MaterialBlink());
             }
-            else
-                Debug.Log("At least 1 ring not on correct rotation yet!");
+/*            else
+                Debug.Log("At least 1 ring not on correct rotation yet!");*/
         }
 
         // Dirty copy & pase of Ring blink
