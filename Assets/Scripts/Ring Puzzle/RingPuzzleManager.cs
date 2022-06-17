@@ -14,8 +14,8 @@ namespace Ring_Puzzle
 
         private void Start()
         {
-            /*RandomMoveOrnaments();
-            RandomRotateRings();*/
+            RandomMoveOrnaments();
+            RandomRotateRings();
         }
 
         private void Update()

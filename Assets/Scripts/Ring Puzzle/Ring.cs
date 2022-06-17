@@ -112,7 +112,7 @@ namespace Ring_Puzzle
             transform.rotation = Quaternion.Euler(targetAngle);
 
             if ((int)transform.rotation.eulerAngles.y == (int)correctYRotation)
-                yield return MaterialBlink();  // Wait until blinking is done
+                CorrectRotation = true; /*yield return MaterialBlink();*/  // Wait until blinking is done
             else
                 CorrectRotation = false;  // Will set controlling bool back to false (in case the player rotates the ring again)
 

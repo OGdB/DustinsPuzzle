@@ -17,6 +17,10 @@ public class ConstellationOrnament : MonoBehaviour
     [SerializeField] private bool setCancerPosition = false;
     [SerializeField] private Vector3 cancerPosition;
 
+    [Header("Taurus")]
+    [SerializeField] private bool setTaurusPosition = false;
+    [SerializeField] private Vector3 taurusPosition;
+
     [Header("Leo")]
     [SerializeField] private bool setLeoPosition = false;
     [SerializeField] private Vector3 leoPosition;
@@ -24,10 +28,6 @@ public class ConstellationOrnament : MonoBehaviour
     [Header("Scorpio")]
     [SerializeField] private bool setScorpioPosition = false;
     [SerializeField] private Vector3 scorpioPosition;
-
-    [Header("Taurus")]
-    [SerializeField] private bool setTaurusPosition = false;
-    [SerializeField] private Vector3 taurusPosition;
 
     public Vector3[] ConstellationOrder { get; private set; }
     private WaitForFixedUpdate fixedUpdate;
@@ -38,9 +38,9 @@ public class ConstellationOrnament : MonoBehaviour
         ConstellationOrder = new Vector3[5];
         ConstellationOrder[0] = ariesPosition;
         ConstellationOrder[1] = cancerPosition;
-        ConstellationOrder[2] = leoPosition;
-        ConstellationOrder[3] = scorpioPosition;
-        ConstellationOrder[4] = taurusPosition;
+        ConstellationOrder[2] = taurusPosition;
+        ConstellationOrder[3] = leoPosition;
+        ConstellationOrder[4] = scorpioPosition;
     }
 
     public void MoveToConstellationOrder(int constellationInt)
@@ -98,8 +98,8 @@ public class ConstellationOrnament : MonoBehaviour
         ConstellationOrder = new Vector3[5];
         ConstellationOrder[0] = ariesPosition;
         ConstellationOrder[1] = cancerPosition;
-        ConstellationOrder[2] = leoPosition;
-        ConstellationOrder[3] = scorpioPosition;
-        ConstellationOrder[4] = taurusPosition;
+        ConstellationOrder[2] = taurusPosition;
+        ConstellationOrder[3] = leoPosition;
+        ConstellationOrder[4] = scorpioPosition;
     }
 }
