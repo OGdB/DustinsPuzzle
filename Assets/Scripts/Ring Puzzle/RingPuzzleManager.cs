@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,22 +8,18 @@ namespace Ring_Puzzle
         [Tooltip("Everything that happens when the puzzle is finished"), Space(5)]
         public UnityEvent onPuzzleFinishedEvents;
 
-        [SerializeField, Space(10)]
-        private Ring[] rings;
-        [SerializeField] 
-        private Material playerMaterial;
+        private int currentPosition = 0;
 
-        private void Awake()
+        private void Start()
         {
-            if (rings.Length == 0)
-            {
-                Debug.LogError("There are no rings dragged into the inspector to check!");
-            }
+            RandomMoveOrnaments();
+            RandomRotateRings();
         }
 
         public void CorrectRotationCheck()
         {
             bool puzzleFinished = true;
+            Ring[] rings = FindObjectsOfType<Ring>();
             for (int i = 0; i < rings.Length; i++)
             {
                 Ring ring = rings[i];
@@ -36,11 +31,34 @@ namespace Ring_Puzzle
             {
                 //Debug.Log("All rings on correct rotation!");
                 onPuzzleFinishedEvents.Invoke();
-                _ = StartCoroutine(MaterialBlink());
             }
-/*            else
-                Debug.Log("At least 1 ring not on correct rotation yet!");*/
         }
+
+        public void MoveToNextConstellation()
+        {
+            currentPosition++;
+
+            RandomMoveOrnaments();
+            RandomRotateRings();
+        }
+
+        private void RandomMoveOrnaments()
+        {
+            ConstellationOrnament[] ornaments = FindObjectsOfType<ConstellationOrnament>();
+            foreach (var ornament in ornaments)
+            {
+                ornament.MoveToConstellationOrder(currentPosition);
+            }
+        }
+        private void RandomRotateRings()
+        {
+            Ring[] rings = FindObjectsOfType<Ring>();
+            foreach (var ring in rings)
+            {
+                ring.RotateToRandomRotation();
+            }
+        }
+/*
 
         // Dirty copy & pase of Ring blink
         private IEnumerator MaterialBlink()
@@ -59,6 +77,6 @@ namespace Ring_Puzzle
 
                 yield return new WaitForSeconds(0.2f);
             }
-        }
+        }*/
     }
 }

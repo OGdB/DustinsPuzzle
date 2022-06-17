@@ -581,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199564645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.79, y: 2, z: 0.91}
+  m_LocalPosition: {x: 8.31, y: 2, z: 2.6100001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -712,9 +712,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
+  ariesPosition: {x: -4.79, y: 2, z: 0.91}
   setCancerPosition: 0
   cancerPosition: {x: 0, y: 0, z: 0}
   setLeoPosition: 0
@@ -751,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220964208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.29, y: 5.45, z: 3.9}
+  m_LocalPosition: {x: 8.81, y: 5.45, z: 5.6000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -882,9 +883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
+  ariesPosition: {x: -4.29, y: 5.45, z: 3.9}
   setCancerPosition: 0
   cancerPosition: {x: 0, y: 0, z: 0}
   setLeoPosition: 0
@@ -3240,7 +3242,6 @@ GameObject:
   - component: {fileID: 829760479}
   - component: {fileID: 829760478}
   - component: {fileID: 829760481}
-  - component: {fileID: 829760483}
   - component: {fileID: 829760482}
   m_Layer: 0
   m_Name: Puzzle Ornament
@@ -3257,7 +3258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829760475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8, y: 3.59, z: -4.19}
+  m_LocalPosition: {x: 11.3, y: 3.59, z: -2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3388,32 +3389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
-  setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
-  setLeoPosition: 0
-  leoPosition: {x: 0, y: 0, z: 0}
-  setScorpioPosition: 0
-  scorpioPosition: {x: 0, y: 0, z: 0}
-  setTaurusPosition: 0
-  taurusPosition: {x: 0, y: 0, z: 0}
---- !u!114 &829760483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829760475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rememberPosition: 0
-  setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
+  ariesPosition: {x: -1.8, y: 3.59, z: -4.19}
   setCancerPosition: 0
   cancerPosition: {x: 0, y: 0, z: 0}
   setLeoPosition: 0
@@ -3826,7 +3805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110276762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 5.45, z: -5.16}
+  m_LocalPosition: {x: 10.1, y: 5.45, z: -3.4599998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3957,9 +3936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constellationMovementSpeed: 10
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
+  ariesPosition: {x: -3, y: 5.45, z: -5.16}
   setCancerPosition: 0
   cancerPosition: {x: 0, y: 0, z: 0}
   setLeoPosition: 0
@@ -4995,7 +4975,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485010609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 5.45, z: 0}
+  m_LocalPosition: {x: 10.1, y: 5.45, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5126,9 +5106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: 0, y: 0, z: 0}
+  ariesPosition: {x: -3, y: 5.45, z: 0}
   setCancerPosition: 0
   cancerPosition: {x: 0, y: 0, z: 0}
   setLeoPosition: 0
@@ -6541,6 +6522,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1393838890}
         m_TargetAssemblyTypeName: MusicLooper, Assembly-CSharp
         m_MethodName: ChangeMusicClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1847432678}
+        m_TargetAssemblyTypeName: Ring_Puzzle.RingPuzzleManager, Assembly-CSharp
+        m_MethodName: MoveToNextConstellation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

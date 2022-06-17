@@ -46,16 +46,41 @@ namespace Ring_Puzzle
             }
         }
 
-        /*private void Update()
-        {
-            if (Input.GetKeyDown(rotateKey) && !isRotating)
-                _ = StartCoroutine(Rotate());
-        }*/
-
         public void RotateRing()
         {
             if (isRotating) return;
             _ = StartCoroutine(Rotate());
+        }
+
+        public void RotateToRandomRotation()
+        {
+            _ = StartCoroutine(RotateRandom());
+
+            IEnumerator RotateRandom()
+            {
+                isRotating = true;
+
+                int randomInt = Random.Range(1, 5);
+                float randomRotateAmount = randomInt * rotateAmount;
+
+                float targetRotation = transform.rotation.eulerAngles.y + randomRotateAmount;
+                Vector3 targetAngle = transform.rotation.eulerAngles;
+                targetAngle.y = targetRotation;
+
+                float rotatedAmount = 0;
+                while (rotatedAmount <= randomRotateAmount)
+                {
+                    rotatedAmount += rotationSpeed;
+
+                    transform.RotateAround(centerPoint.position, Vector3.up, rotationSpeed);
+
+                    yield return fixedUpdate;
+                }
+
+                transform.rotation = Quaternion.Euler(targetAngle);
+
+                isRotating = false;
+            }
         }
 
         private IEnumerator Rotate()

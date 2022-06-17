@@ -1,9 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Constellation : MonoBehaviour
+/// <summary>
+/// Set the starting position of a puzzle ornament depending on the current progression.
+/// </summary>
+public class ConstellationOrnament : MonoBehaviour
 {
+    [SerializeField] private float constellationMovementSpeed = 5f;
     [SerializeField] private bool rememberPosition = false;
 
     [Header("Aries")]
@@ -25,6 +28,40 @@ public class Constellation : MonoBehaviour
     [Header("Taurus")]
     [SerializeField] private bool setTaurusPosition = false;
     [SerializeField] private Vector3 taurusPosition;
+
+    public Vector3[] ConstellationOrder { get; private set; }
+    private WaitForFixedUpdate fixedUpdate;
+
+    private void Awake()
+    {
+        fixedUpdate = new WaitForFixedUpdate();
+        ConstellationOrder = new Vector3[5];
+        ConstellationOrder[0] = ariesPosition;
+        ConstellationOrder[1] = cancerPosition;
+        ConstellationOrder[2] = leoPosition;
+        ConstellationOrder[3] = scorpioPosition;
+        ConstellationOrder[4] = taurusPosition;
+    }
+
+    public void MoveToConstellationOrder(int constellationInt)
+    {
+        _ = StartCoroutine(LerpLocalPosition(constellationMovementSpeed, ConstellationOrder[constellationInt]));
+    }
+
+    private IEnumerator LerpLocalPosition(float speed, Vector3 targetPosition)
+    {
+        float startTime = Time.time;
+        Vector3 startPosition = transform.localPosition;
+
+        while (transform.localPosition != targetPosition)
+        {
+            float timeSinceStarted = Time.time - startTime;
+            float progress = timeSinceStarted / speed;
+            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, progress);
+
+            yield return fixedUpdate;
+        }
+    }
 
     private void OnValidate()
     {
@@ -57,5 +94,12 @@ public class Constellation : MonoBehaviour
             }
             rememberPosition = false;
         }
+
+        ConstellationOrder = new Vector3[5];
+        ConstellationOrder[0] = ariesPosition;
+        ConstellationOrder[1] = cancerPosition;
+        ConstellationOrder[2] = leoPosition;
+        ConstellationOrder[3] = scorpioPosition;
+        ConstellationOrder[4] = taurusPosition;
     }
 }
