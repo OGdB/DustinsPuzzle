@@ -135,7 +135,7 @@ namespace Ring_Puzzle
             }
 
             CorrectRotation = true;
-            GetComponentInParent<RingPuzzleManager>().CorrectRotationCheck();
+            //GetComponentInParent<RingPuzzleManager>().CorrectRotationCheck();
         }
 
         // Found: https://forum.unity.com/threads/setting-material-emission-intensity-in-script-to-match-ui-value.661624/

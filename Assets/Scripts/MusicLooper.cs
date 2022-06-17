@@ -4,18 +4,43 @@ using UnityEngine;
 public class MusicLooper : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] backgroundMusicClips;
+    private OnPuzzleProgression[] backgroundMusicClips;
     private int currentMusicClip = 0;
 
     private void Start()
     {
-        GetComponent<AudioSource>().clip = backgroundMusicClips[currentMusicClip];
+        GetComponent<AudioSource>().clip = backgroundMusicClips[currentMusicClip].newBackgroundMusic;
         GetComponent<AudioSource>().Play();
     }
     public void ChangeMusicClip()
     {
         currentMusicClip++;
-        GetComponent<AudioSource>().clip = backgroundMusicClips[currentMusicClip];
-        GetComponent<AudioSource>().Play();
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Stop();
+
+        if (backgroundMusicClips[currentMusicClip].singleSoundClip != null)
+        {
+            audioSource.PlayOneShot(backgroundMusicClips[currentMusicClip].singleSoundClip);
+            Invoke(nameof(PlayNextBackgroundClip), backgroundMusicClips[currentMusicClip].singleSoundClip.length);
+        }
+        else
+        {
+            audioSource.clip = backgroundMusicClips[currentMusicClip].newBackgroundMusic;
+            print("Play: " + backgroundMusicClips[currentMusicClip].newBackgroundMusic.name);
+            audioSource.Play();
+        }
     }
+    private void PlayNextBackgroundClip()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = backgroundMusicClips[currentMusicClip].newBackgroundMusic;
+        audioSource.Play();
+    }
+}
+
+[System.Serializable]
+public class OnPuzzleProgression
+{
+    public AudioClip singleSoundClip;
+    public AudioClip newBackgroundMusic;
 }
