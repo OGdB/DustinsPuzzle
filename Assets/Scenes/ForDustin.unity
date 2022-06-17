@@ -578,7 +578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199564645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.31, y: 2, z: 2.6100001}
+  m_LocalPosition: {x: -3.52, y: 2, z: 2.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -714,7 +714,7 @@ MonoBehaviour:
   setAriesPosition: 0
   ariesPosition: {x: -4.79, y: 2, z: 0.91}
   setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
+  cancerPosition: {x: -3.52, y: 2, z: 2.76}
   setLeoPosition: 0
   leoPosition: {x: 0, y: 0, z: 0}
   setScorpioPosition: 0
@@ -749,7 +749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220964208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.81, y: 5.45, z: 5.6000004}
+  m_LocalPosition: {x: -3.19, y: 5, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -883,9 +883,9 @@ MonoBehaviour:
   constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: -4.29, y: 5.45, z: 3.9}
+  ariesPosition: {x: -4.29, y: 5, z: 3.9}
   setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
+  cancerPosition: {x: -3.19, y: 5, z: -2.4}
   setLeoPosition: 0
   leoPosition: {x: 0, y: 0, z: 0}
   setScorpioPosition: 0
@@ -3259,7 +3259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829760475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.3, y: 3.59, z: -2.49}
+  m_LocalPosition: {x: -3.76, y: 2, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3393,9 +3393,9 @@ MonoBehaviour:
   constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: -1.8, y: 3.59, z: -4.19}
+  ariesPosition: {x: -1.8, y: 2, z: -4.19}
   setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
+  cancerPosition: {x: -3.76, y: 2, z: -6}
   setLeoPosition: 0
   leoPosition: {x: 0, y: 0, z: 0}
   setScorpioPosition: 0
@@ -3701,7 +3701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992680653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.56, y: 5.45, z: 0.48}
+  m_LocalPosition: {x: 1.56, y: 5, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4042,7 +4042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110276762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.1, y: 5.45, z: -3.4599998}
+  m_LocalPosition: {x: -5.1, y: 5, z: -0.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4176,9 +4176,9 @@ MonoBehaviour:
   constellationMovementSpeed: 10
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: -3, y: 5.45, z: -5.16}
+  ariesPosition: {x: -3, y: 5, z: -5.16}
   setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
+  cancerPosition: {x: -5.1, y: 5, z: -0.97}
   setLeoPosition: 0
   leoPosition: {x: 0, y: 0, z: 0}
   setScorpioPosition: 0
@@ -4346,7 +4346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209105006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.79, y: 5.45, z: -1.22}
+  m_LocalPosition: {x: 4.79, y: 5, z: -1.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5218,7 +5218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485010609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.1, y: 5.45, z: 1.7}
+  m_LocalPosition: {x: -3.54, y: 5, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5352,9 +5352,9 @@ MonoBehaviour:
   constellationMovementSpeed: 5
   rememberPosition: 0
   setAriesPosition: 0
-  ariesPosition: {x: -3, y: 5.45, z: 0}
+  ariesPosition: {x: -3, y: 5, z: 0}
   setCancerPosition: 0
-  cancerPosition: {x: 0, y: 0, z: 0}
+  cancerPosition: {x: -3.54, y: 5, z: 0.9}
   setLeoPosition: 0
   leoPosition: {x: 0, y: 0, z: 0}
   setScorpioPosition: 0
@@ -5388,7 +5388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517825071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.55, y: 5.45, z: 1.73}
+  m_LocalPosition: {x: 4.55, y: 5, z: 1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5653,8 +5653,9 @@ GameObject:
   - component: {fileID: 1614594558}
   - component: {fileID: 1614594557}
   - component: {fileID: 1614594555}
+  - component: {fileID: 1614594559}
   m_Layer: 0
-  m_Name: Sun_Ornament_2
+  m_Name: Puzzle Ornament
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5668,7 +5669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614594553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.65, z: 3.75}
+  m_LocalPosition: {x: -3.17, y: 3.65, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5757,7 +5758,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d813521793a4d3488cb8c651d40c930, type: 2}
+  - {fileID: 2100000, guid: 5d1dfa89d6ed4e246992f1cbb7edb32d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5787,6 +5788,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614594553}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1614594559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614594553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde1f141bd20dac4a999e26862b204ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constellationMovementSpeed: 5
+  rememberPosition: 0
+  setAriesPosition: 0
+  ariesPosition: {x: -3, y: 3.65, z: 0.91}
+  setCancerPosition: 0
+  cancerPosition: {x: -3.17, y: 3.65, z: -0.01}
+  setLeoPosition: 0
+  leoPosition: {x: 0, y: 0, z: 0}
+  setScorpioPosition: 0
+  scorpioPosition: {x: 0, y: 0, z: 0}
+  setTaurusPosition: 0
+  taurusPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1680082084
 GameObject:
   m_ObjectHideFlags: 0
@@ -6909,7 +6934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848981257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 5.45, z: -6.85}
+  m_LocalPosition: {x: 0.08, y: 5, z: -6.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
