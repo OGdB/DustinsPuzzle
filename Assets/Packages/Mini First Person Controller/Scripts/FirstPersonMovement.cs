@@ -2,13 +2,14 @@
 
 public class FirstPersonMovement : MonoBehaviour
 {
-    public float speed = 5;
+    public float walkSpeed = 5;
 
     [Header("Running")]
     public bool canRun = true;
     public bool IsRunning { get; private set; }
     public float runSpeed = 9;
 
+    private float speed = 5;
     private Rigidbody rigidbody;
 
     private void Awake()
@@ -16,11 +17,27 @@ public class FirstPersonMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void OnEnable()
+    {
+        if (canRun)
+        {
+            InputManager.input.Main.Sprint.started += _ => speed = runSpeed;
+            InputManager.input.Main.Sprint.canceled += _ => speed = walkSpeed;
+        }
+    }
+    private void OnDisable()
+    {
+        if (canRun)
+        {
+            InputManager.input.Main.Sprint.started -= _ => speed = runSpeed;
+            InputManager.input.Main.Sprint.canceled -= _ => speed = walkSpeed;
+        }
+    }
+
     private void FixedUpdate()
     {
         // Get targetMovingSpeed.
-        float targetMovingSpeed = IsRunning ? runSpeed : speed;
-        Vector2 targetVelocity = InputManager.GetMovementInput() * targetMovingSpeed;
+        Vector2 targetVelocity = InputManager.GetMovementInput() * speed;
 
         // Apply movement.
         rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);

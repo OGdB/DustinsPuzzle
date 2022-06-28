@@ -312,15 +312,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9fcb6dc763cd0354da305b5de2091287, type: 3}
   - {fileID: 8300000, guid: ab9637a2491abbf4ca9c9601321cbb88, type: 3}
   - {fileID: 8300000, guid: 50b288ce0d5ac1e439827c5365c74c31, type: 3}
-  jump: {fileID: 0}
-  jumpAudio: {fileID: 0}
-  jumpSFX: []
-  crouch: {fileID: 0}
-  crouchStartAudio: {fileID: 0}
-  crouchedAudio: {fileID: 0}
-  crouchEndAudio: {fileID: 0}
-  crouchStartSFX: []
-  crouchEndSFX: []
 --- !u!1 &5241267463746980526
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +329,7 @@ GameObject:
   - component: {fileID: 6402203609115618609}
   m_Layer: 0
   m_Name: First Person Controller Minimal
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,10 +407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fca36bd81de7c4cafce7bbf02ca611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  canRun: 1
+  speed: 3
+  canRun: 0
   runSpeed: 9
-  runningKey: 304
 --- !u!114 &6402203609115618605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -60
   maxX: 60
-  sensitivity: 0
+  sensitivity: 0.1
   inverted: 0
 --- !u!114 &6402203609115618609
 MonoBehaviour:
@@ -449,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: {fileID: 0}
-  interactionDistance: 1.25
+  interactionDistance: 2.25
 --- !u!1 &5241892580736583940
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,4 +803,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceThreshold: 0.15
-  isGrounded: 1
+  isGrounded: 0

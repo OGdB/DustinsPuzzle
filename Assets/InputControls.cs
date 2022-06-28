@@ -37,6 +37,15 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""f02f9924-b684-4972-91dc-f9d333fb398c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Quit"",
                     ""type"": ""Button"",
                     ""id"": ""af5403f0-eeb8-4ae6-940b-30cc4e7f5857"",
@@ -174,6 +183,17 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f2fe57c-92f1-4a02-b063-d09cc74b9b0f"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -183,6 +203,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_Interact = m_Main.FindAction("Interact", throwIfNotFound: true);
+        m_Main_Sprint = m_Main.FindAction("Sprint", throwIfNotFound: true);
         m_Main_Quit = m_Main.FindAction("Quit", throwIfNotFound: true);
         m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
         m_Main_Look = m_Main.FindAction("Look", throwIfNotFound: true);
@@ -246,6 +267,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
     private readonly InputAction m_Main_Interact;
+    private readonly InputAction m_Main_Sprint;
     private readonly InputAction m_Main_Quit;
     private readonly InputAction m_Main_Move;
     private readonly InputAction m_Main_Look;
@@ -254,6 +276,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
         private @InputControls m_Wrapper;
         public MainActions(@InputControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Interact => m_Wrapper.m_Main_Interact;
+        public InputAction @Sprint => m_Wrapper.m_Main_Sprint;
         public InputAction @Quit => m_Wrapper.m_Main_Quit;
         public InputAction @Move => m_Wrapper.m_Main_Move;
         public InputAction @Look => m_Wrapper.m_Main_Look;
@@ -269,6 +292,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_MainActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnInteract;
+                @Sprint.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSprint;
                 @Quit.started -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
                 @Quit.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
                 @Quit.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnQuit;
@@ -285,6 +311,9 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
                 @Quit.started += instance.OnQuit;
                 @Quit.performed += instance.OnQuit;
                 @Quit.canceled += instance.OnQuit;
@@ -301,6 +330,7 @@ public partial class @InputControls : IInputActionCollection2, IDisposable
     public interface IMainActions
     {
         void OnInteract(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
