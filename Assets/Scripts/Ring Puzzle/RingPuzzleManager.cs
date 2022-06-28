@@ -18,7 +18,7 @@ namespace Ring_Puzzle
             RandomRotateRings();
         }
 
-        private void Update()
+/*        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
@@ -28,7 +28,7 @@ namespace Ring_Puzzle
                     ring.CheatToCorrectRotation();
                 }
             }
-        }
+        }*/
 
         public void CorrectRotationCheck()
         {
