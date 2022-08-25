@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class Quit : MonoBehaviour
 {
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown((KeyCode.Escape)))
-        {
-            Application.Quit();
-        }
+        InputManager.input.Main.Quit.started += _ => QuitNow();
     }
+    private void OnDisable()
+    {
+        InputManager.input.Main.Quit.started -= _ => QuitNow();
+    }
+
+    private void QuitNow() => Application.Quit();
 }
