@@ -19,7 +19,17 @@ public class FirstPersonAudio : MonoBehaviour
     public AudioSource landingAudio;
     public AudioClip[] landingSFX;
 
-    AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio };
+    [Header("Jump")]
+    public Jump jump;
+    public AudioSource jumpAudio;
+    public AudioClip[] jumpSFX;
+
+    [Header("Crouch")]
+    public Crouch crouch;
+    public AudioSource crouchStartAudio, crouchedAudio, crouchEndAudio;
+    public AudioClip[] crouchStartSFX, crouchEndSFX;
+
+    AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio };
 
 
     void Reset()
@@ -30,6 +40,22 @@ public class FirstPersonAudio : MonoBehaviour
         stepAudio = GetOrCreateAudioSource("Step Audio");
         runningAudio = GetOrCreateAudioSource("Running Audio");
         landingAudio = GetOrCreateAudioSource("Landing Audio");
+
+        // Setup jump audio.
+        jump = GetComponentInParent<Jump>();
+        if (jump)
+        {
+            jumpAudio = GetOrCreateAudioSource("Jump audio");
+        }
+
+        // Setup crouch audio.
+        crouch = GetComponentInParent<Crouch>();
+        if (crouch)
+        {
+            crouchStartAudio = GetOrCreateAudioSource("Crouch Start Audio");
+            crouchStartAudio = GetOrCreateAudioSource("Crouched Audio");
+            crouchStartAudio = GetOrCreateAudioSource("Crouch End Audio");
+        }
     }
 
     void OnEnable() => SubscribeToEvents();
@@ -42,7 +68,11 @@ public class FirstPersonAudio : MonoBehaviour
         float velocity = Vector3.Distance(CurrentCharacterPosition, lastCharacterPosition);
         if (velocity >= velocityThreshold && groundCheck && groundCheck.isGrounded)
         {
-            if (character.IsRunning)
+            if (crouch && crouch.IsCrouched)
+            {
+                SetPlayingMovingAudio(crouchedAudio);
+            }
+            else if (character.IsRunning)
             {
                 SetPlayingMovingAudio(runningAudio);
             }
@@ -82,6 +112,9 @@ public class FirstPersonAudio : MonoBehaviour
 
     #region Play instant-related audios.
     void PlayLandingAudio() => PlayRandomClip(landingAudio, landingSFX);
+    void PlayJumpAudio() => PlayRandomClip(jumpAudio, jumpSFX);
+    void PlayCrouchStartAudio() => PlayRandomClip(crouchStartAudio, crouchStartSFX);
+    void PlayCrouchEndAudio() => PlayRandomClip(crouchEndAudio, crouchEndSFX);
     #endregion
 
     #region Subscribe/unsubscribe to events.
@@ -89,12 +122,38 @@ public class FirstPersonAudio : MonoBehaviour
     {
         // PlayLandingAudio when Grounded.
         groundCheck.Grounded += PlayLandingAudio;
+
+        // PlayJumpAudio when Jumped.
+        if (jump)
+        {
+            jump.Jumped += PlayJumpAudio;
+        }
+
+        // Play crouch audio on crouch start/end.
+        if (crouch)
+        {
+            crouch.CrouchStart += PlayCrouchStartAudio;
+            crouch.CrouchEnd += PlayCrouchEndAudio;
+        }
     }
 
     void UnsubscribeToEvents()
     {
         // Undo PlayLandingAudio when Grounded.
         groundCheck.Grounded -= PlayLandingAudio;
+
+        // Undo PlayJumpAudio when Jumped.
+        if (jump)
+        {
+            jump.Jumped -= PlayJumpAudio;
+        }
+
+        // Undo play crouch audio on crouch start/end.
+        if (crouch)
+        {
+            crouch.CrouchStart -= PlayCrouchStartAudio;
+            crouch.CrouchEnd -= PlayCrouchEndAudio;
+        }
     }
     #endregion
 

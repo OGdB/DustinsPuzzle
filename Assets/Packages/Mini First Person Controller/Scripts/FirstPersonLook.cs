@@ -30,11 +30,12 @@ public class FirstPersonLook : MonoBehaviour
 
     void Update()
     {
-        Vector2 lookInput = InputManager.GetLookInput();
+        float mouseXMove = Input.GetAxis("Mouse X");
+        float mouseYMove = Input.GetAxis("Mouse Y");
 
-        float ySpeed = lookInput.x * sensitivity;
+        float ySpeed = mouseXMove * sensitivity;
         thisRot.y += ySpeed;
-        float xSpeed = invertedInt * lookInput.y * sensitivity;
+        float xSpeed = invertedInt * mouseYMove * sensitivity;
         cameraRot.x += xSpeed;
 
         cameraRot.x = Mathf.Clamp(cameraRot.x, minX, maxX);

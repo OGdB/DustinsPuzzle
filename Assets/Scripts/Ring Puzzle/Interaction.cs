@@ -12,21 +12,20 @@ namespace Ring_Puzzle
         
         private Interactable currentInteractable;
 
-
-        private void Awake() => cam = Camera.main;
-        private void OnEnable() => InputManager.input.Main.Interact.started += _ => Interact();
-        private void OnDisable() => InputManager.input.Main.Interact.started -= _ => Interact();
-
-        private void Interact()
+        private void Update()
         {
-            if (!currentInteractable) return;
+            Raycast();
 
-            OnInteract();
+            if (Input.GetMouseButtonDown(0) && currentInteractable)
+            {
+                OnInteract();
+            }
         }
 
-        private void Update() => Raycast();
-
-        private void OnInteract() => currentInteractable.OnInteraction();
+        private void OnInteract()
+        {
+            currentInteractable.OnInteraction();
+        }
 
         private void Raycast()
         {
@@ -69,6 +68,11 @@ namespace Ring_Puzzle
             interactText.enabled = false;
             currentInteractable.OnStopHover();
             currentInteractable = null;
+        }
+
+        private void Awake()
+        {
+            cam = Camera.main;
         }
 
         private void OnDrawGizmos()
